@@ -16,10 +16,8 @@ class MyListAdapter : ListAdapter<Monster, RecyclerView.ViewHolder>(MyDiffCallba
         fun bind(data: Monster) {
             with(binding) {
                 tvName.text = "Name: ${data.name}"
-                tvRace.text = "Race: ${data.race}"
                 tvLevel.text = "Level: ${data.level}"
                 tvStats.text = "HP: ${data.stats[0]} / MP: ${data.stats[1]} / Exp: ${data.stats[2]}"
-                tvEncount.text = "Encounted: ${data.encount}"
 
                 vhLayout.setOnClickListener {
                     Snackbar.make(
@@ -35,10 +33,8 @@ class MyListAdapter : ListAdapter<Monster, RecyclerView.ViewHolder>(MyDiffCallba
         fun setAlpha(alpha: Float) {
             with(binding) {
                 tvName.alpha = alpha
-                tvRace.alpha = alpha
                 tvLevel.alpha = alpha
                 tvStats.alpha = alpha
-                tvEncount.alpha = alpha
             }
         }
     }

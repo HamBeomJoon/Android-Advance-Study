@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -26,36 +27,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
-                android:text="Monster name"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_race"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Race"
-                android:textSize="18sp" />
+                android:textSize="24sp"
+                tools:text="Monster name" />
 
             <TextView
                 android:id="@+id/tv_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Level"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="Level" />
 
             <TextView
                 android:id="@+id/tv_stats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Stats"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="Stats" />
 
-            <TextView
-                android:id="@+id/tv_encount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Encount"
-                android:textSize="18sp" />
         </LinearLayout>
 
         <ImageView
@@ -63,7 +51,8 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/ic_menu" />
+            android:src="@drawable/ic_menu"
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 </layout>
