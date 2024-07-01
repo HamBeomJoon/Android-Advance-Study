@@ -1,5 +1,6 @@
 package com.example.app
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -13,6 +14,7 @@ class MyListAdapter : ListAdapter<Monster, RecyclerView.ViewHolder>(MyDiffCallba
     inner class MyViewHolder(private val binding: ViewItemlistBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(data: Monster) {
             with(binding) {
                 tvName.text = "Name: ${data.name}"
@@ -20,11 +22,7 @@ class MyListAdapter : ListAdapter<Monster, RecyclerView.ViewHolder>(MyDiffCallba
                 tvStats.text = "HP: ${data.stats[0]} / MP: ${data.stats[1]} / Exp: ${data.stats[2]}"
 
                 vhLayout.setOnClickListener {
-                    Snackbar.make(
-                        it,
-                        "Item $adapterPosition touched!",
-                        Snackbar.LENGTH_SHORT
-                    )
+                    Snackbar.make(it, "Item $adapterPosition touched!", Snackbar.LENGTH_SHORT)
                         .show()
                 }
             }
