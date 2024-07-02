@@ -36,7 +36,9 @@ class MainActivity : AppCompatActivity() {
         myListAdapter.submitList(dataSet)
 
         binding.fab.setOnClickListener {
-            myListAdapter.submitList(dataSet.shuffled())
+            val list = myListAdapter.currentList.toMutableList()
+            list.add(Monster("핑크빈", 200, listOf(999999999, 10, 50)))
+            myListAdapter.submitList(list)
         }
 
         val itemTouchHelper = ItemTouchHelper(MyItemTouchHelperCallback(binding.recyclerview))
