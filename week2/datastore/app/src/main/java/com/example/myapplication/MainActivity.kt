@@ -1,7 +1,7 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.asLiveData
 import com.example.myapplication.databinding.ActivityDataStoreTestBinding
@@ -72,5 +72,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 }
