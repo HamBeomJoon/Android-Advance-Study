@@ -21,28 +21,28 @@ class UserManager(
 
     suspend fun storeUser(
         age: Int,
-        frontName: String,
+        firstName: String,
         lastName: String,
         isMale: Boolean
     ) {
         dataStore.edit {
             it[USER_AGE_KEY] = age
-            it[USER_FIRST_NAME_KEY] = frontName
+            it[USER_FIRST_NAME_KEY] = firstName
             it[USER_LAST_NAME_KEY] = lastName
             it[USER_GENDER_KEY] = isMale
         }
     }
 
-    val userAgeFlow: Flow<Int?> = dataStore.data.map {
-        it[USER_AGE_KEY]
+    val userAgeFlow: Flow<Int?> = dataStore.data.map { it ->
+        it[USER_AGE_KEY] ?: -1
     }
 
     val userFirstNameFlow: Flow<String?> = dataStore.data.map {
-        it[USER_FIRST_NAME_KEY]
+        it[USER_FIRST_NAME_KEY] ?: ""
     }
 
     val userLastNameFlow: Flow<String?> = dataStore.data.map {
-        it[USER_LAST_NAME_KEY]
+        it[USER_LAST_NAME_KEY] ?: ""
     }
 
     val userGenderFlow: Flow<Boolean?> = dataStore.data.map {

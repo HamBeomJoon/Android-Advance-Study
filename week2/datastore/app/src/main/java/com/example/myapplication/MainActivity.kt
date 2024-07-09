@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDataStoreTestBinding
     private lateinit var userManager: UserManager
     private var age = -1
-    private var frontName = ""
+    private var firstName = ""
     private var lastName = ""
     private var gender = ""
 
@@ -32,13 +32,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun ActivityDataStoreTestBinding.buttonSave() {
         btnSave.setOnClickListener {
-            frontName = etFname.text.toString()
+            firstName = etFname.text.toString()
             lastName = etLname.text.toString()
             age = etAge.text.toString().toInt()
             val isMale = switchGender.isChecked
 
             CoroutineScope(IO).launch {
-                userManager.storeUser(age, frontName, lastName, isMale)
+                userManager.storeUser(age, firstName, lastName, isMale)
             }
         }
     }
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         userManager.userFirstNameFlow.asLiveData().observe(this) {
             if (it != null) {
-                frontName = it
+                firstName = it
                 binding.tvFname.text = it
             }
         }
