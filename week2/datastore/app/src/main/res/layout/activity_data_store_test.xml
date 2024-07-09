@@ -9,59 +9,6 @@
         android:background="@color/white"
         tools:context=".datastore.DataStoreTestActivity">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:padding="18dp"
-            android:text="Save user"
-            android:textColor="@android:color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/switch_gender"
-            app:layout_constraintStart_toStartOf="@+id/switch_gender"
-            app:layout_constraintTop_toBottomOf="@+id/switch_gender" />
-
-        <EditText
-            android:id="@+id/et_lname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="이름"
-            app:layout_constraintEnd_toEndOf="@+id/et_fname"
-            app:layout_constraintStart_toStartOf="@+id/et_fname"
-            app:layout_constraintTop_toBottomOf="@+id/et_fname"
-            tools:ignore="Autofill,TextFields" />
-
-        <EditText
-            android:id="@+id/et_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="나이"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="@+id/et_lname"
-            app:layout_constraintStart_toStartOf="@+id/et_lname"
-            app:layout_constraintTop_toBottomOf="@+id/et_lname"
-            tools:ignore="Autofill,TextFields"
-            tools:layout_editor_absoluteY="317dp" />
-
-        <EditText
-            android:id="@+id/et_fname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:ems="10"
-            android:hint="성"
-            app:layout_constraintEnd_toEndOf="@+id/tv_gender"
-            app:layout_constraintStart_toStartOf="@+id/tv_gender"
-            app:layout_constraintTop_toBottomOf="@+id/tv_gender"
-            tools:ignore="Autofill,TextFields"
-            tools:layout_editor_absoluteY="178dp" />
-
         <TextView
             android:id="@+id/tv_fname"
             android:layout_width="wrap_content"
@@ -115,6 +62,45 @@
             app:layout_constraintStart_toStartOf="@+id/tv_age"
             app:layout_constraintTop_toBottomOf="@+id/tv_age" />
 
+        <EditText
+            android:id="@+id/et_fname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="성"
+            app:layout_constraintEnd_toEndOf="@+id/tv_gender"
+            app:layout_constraintStart_toStartOf="@+id/tv_gender"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gender"
+            tools:ignore="Autofill,TextFields"
+            tools:layout_editor_absoluteY="178dp" />
+
+        <EditText
+            android:id="@+id/et_lname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="이름"
+            app:layout_constraintEnd_toEndOf="@+id/et_fname"
+            app:layout_constraintStart_toStartOf="@+id/et_fname"
+            app:layout_constraintTop_toBottomOf="@+id/et_fname"
+            tools:ignore="Autofill,TextFields" />
+
+        <EditText
+            android:id="@+id/et_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="나이"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/et_lname"
+            app:layout_constraintStart_toStartOf="@+id/et_lname"
+            app:layout_constraintTop_toBottomOf="@+id/et_lname"
+            tools:ignore="Autofill,TextFields"
+            tools:layout_editor_absoluteY="317dp" />
+
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch_gender"
             android:layout_width="wrap_content"
@@ -125,6 +111,20 @@
             app:layout_constraintEnd_toEndOf="@+id/et_age"
             app:layout_constraintStart_toStartOf="@+id/et_age"
             app:layout_constraintTop_toBottomOf="@+id/et_age" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:padding="18dp"
+            android:text="Save user"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/switch_gender"
+            app:layout_constraintStart_toStartOf="@+id/switch_gender"
+            app:layout_constraintTop_toBottomOf="@+id/switch_gender" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

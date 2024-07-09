@@ -48,5 +48,4 @@ class UserManager(
     val userGenderFlow: Flow<Boolean?> = dataStore.data.map {
         it[USER_GENDER_KEY]
     }
-
 }
