@@ -1,10 +1,12 @@
 package com.example.app.presentation
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.app.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -13,8 +15,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+//        setContentView(binding.root)
 
-        val viewModel = HiltViewModel()
+        setContent {
+            val viewModel = hiltViewModel<MyViewModel>()
+        }
     }
 }
