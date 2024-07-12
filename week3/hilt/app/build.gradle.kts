@@ -54,6 +54,9 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.dagger.hilt.android.compiler)
 
+    implementation(libs.androidx.hilt.lifecycle.viewmodel)
+    kapt(libs.androidx.hilt.compiler)
+
     implementation(libs.retrofit)
     implementation(libs.okhttp)
 }
