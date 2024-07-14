@@ -3,7 +3,6 @@ package com.example.app.presentation
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.app.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint

@@ -54,15 +54,6 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.dagger.hilt.android.compiler)
 
-    implementation(libs.androidx.hilt.lifecycle.viewmodel)
-    kapt(libs.androidx.hilt.compiler)
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.3")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-
     implementation(libs.retrofit)
     implementation(libs.okhttp)
-}
-
-kapt {
-    correctErrorTypes = true
 }
