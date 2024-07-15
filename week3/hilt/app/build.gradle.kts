@@ -1,3 +1,7 @@
+import java.io.FileInputStream
+import java.util.Properties
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -9,6 +13,9 @@ android {
     namespace = "com.example.app"
     compileSdk = 34
 
+    val localProperties = Properties()
+    localProperties.load(FileInputStream(rootProject.file("local.properties")))
+
     defaultConfig {
         applicationId = "com.example.app"
         minSdk = 26
@@ -17,6 +24,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_KEY", gradleLocalProperties(rootDir, providers).getProperty("api_key"))
     }
 
     buildTypes {
@@ -37,6 +46,8 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
+        buildConfig = true
     }
 }
 
@@ -47,6 +58,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -56,4 +68,12 @@ dependencies {
 
     implementation(libs.retrofit)
     implementation(libs.okhttp)
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
+    implementation("androidx.fragment:fragment-ktx:1.8.1")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.3")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 }
