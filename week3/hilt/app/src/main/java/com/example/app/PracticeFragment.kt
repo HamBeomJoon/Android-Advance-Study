@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import com.example.app.databinding.FragmentPracticeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class PracticeFragment : Fragment() {
 
@@ -22,7 +21,7 @@ class PracticeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPracticeBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentPracticeBinding.inflate(layoutInflater)
         binding.viewModel = this@PracticeFragment.viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
