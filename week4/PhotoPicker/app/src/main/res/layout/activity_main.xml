@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_main"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="100dp"
+        android:background="#C5C5C5"
+        app:layout_constraintBottom_toTopOf="@id/btn_both"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="ContentDescription" />
+
+    <VideoView
+        android:id="@+id/vv_main"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/iv_main"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/iv_main"
+        app:layout_constraintStart_toStartOf="@id/iv_main"
+        app:layout_constraintTop_toTopOf="@id/iv_main" />
+
+
+    <Button
+        android:id="@+id/btn_both"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이미디와 비디오 모두"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_main" />
+
+    <Button
+        android:id="@+id/btn_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="이미지만"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_video"
+        app:layout_constraintEnd_toEndOf="@id/btn_both"
+
+        app:layout_constraintStart_toStartOf="@id/btn_both"
+        app:layout_constraintTop_toBottomOf="@id/btn_both" />
+
+    <Button
+        android:id="@+id/btn_video"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="비디오만"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_gif"
+        app:layout_constraintEnd_toEndOf="@id/btn_both"
+        app:layout_constraintStart_toStartOf="@id/btn_both"
+        app:layout_constraintTop_toBottomOf="@id/btn_image" />
+
+    <Button
+        android:id="@+id/btn_gif"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="GIF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/btn_both"
+        app:layout_constraintStart_toStartOf="@id/btn_both"
+        app:layout_constraintTop_toBottomOf="@id/btn_video" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
